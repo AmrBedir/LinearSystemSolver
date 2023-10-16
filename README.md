@@ -3,11 +3,11 @@
 
 ### What is required in the task?
 
-* Input: 
+* **Program Input:** 
   * Number of equations.
   * Coefficients for every equation.
   
-* Output: 
+* **Program Output:** 
   * Solution with steps.
   * Final system solution.
 
@@ -101,7 +101,7 @@ class LinearSystemSolver
     }
 }
 ```
-[*Code File*](#)
+[*Code File*](https://github.com/AmrBedir/LinearSystemSolver/blob/main/LinearSystemSolver/LinearSystemSolver/Program.cs)
 
 ### Important to know
 **A linear system of equations is a mathematical representation of multiple linear equations with multiple variables that are interconnected. These systems are used to model and solve a wide range of real-world problems across various fields, including physics, engineering, economics, and more. Here's an explanation of key concepts related to linear systems:**
@@ -114,7 +114,7 @@ class LinearSystemSolver
 
 **Coefficients**: *Coefficients are the constants that multiply the variables in each equation. They determine the relative importance of each variable in the equation. For example, in the equation 2x + 3y = 10, 2 and 3 are coefficients.*
 
-**Constants**: *Constants are the terms that do not involve variables. In the equation 2x + 3y = 10, 10 is the constant term.*
+**Constants**: *Constants are the terms that do not involve variables. In the equation, 2x + 3y = 10, 10 is the constant term.*
 
 **Solution**: *A solution to a linear system is a set of values for the variables that satisfy all the equations simultaneously. This means that when you substitute these values into each equation, the equations are true.*
 
@@ -126,7 +126,7 @@ class LinearSystemSolver
 
 **Matrix Representation**: *Linear systems are often represented using matrices. The coefficient matrix contains the coefficients of the variables, and the constant matrix contains the constants from each equation. By performing matrix operations, you can solve the system.*
 
-**Unique Solution**: *A linear system has a unique solution when there is exactly one set of values for the variables that satisfies all equations. This occurs when the system is square (the number of equations equals the number of variables) and the determinant of the coefficient matrix is nonzero.*
+**Unique Solution**: *A linear system has a unique solution when there is exactly one set of values for the variables that satisfy all equations. This occurs when the system is square (the number of equations equals the number of variables) and the determinant of the coefficient matrix is nonzero.*
 
 **No Solution**: *A linear system has no solution when there are conflicting equations, and it's impossible to find values for the variables that satisfy all of them.*
 
@@ -134,5 +134,5 @@ class LinearSystemSolver
 
 **Linear systems are fundamental in mathematics and play a crucial role in scientific and engineering applications. They provide a structured way to model and analyze relationships between multiple variables and are solved using various methods, including Gaussian elimination, matrix algebra, and numerical techniques.**
 
-### Reference explain linear algebra
+### Reference explains linear algebra
 * [Linear Algebra - Dr. Mervat Mikhail](https://www.youtube.com/playlist?list=PL7snZ0LSsq3gIc4bYM-OnvLZt2KpFvd2_)
