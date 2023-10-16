@@ -101,7 +101,7 @@ class LinearSystemSolver
     }
 }
 ```
-[*Code File*](https://github.com/AmrBedir/LinearSystemSolver/blob/main/LinearSystemSolver/LinearSystemSolver/Program.cs)
+[*C# Code File*](https://github.com/AmrBedir/LinearSystemSolver/blob/main/LinearSystemSolver/LinearSystemSolver/Program.cs)
 
 ### Important to know
 **A linear system of equations is a mathematical representation of multiple linear equations with multiple variables that are interconnected. These systems are used to model and solve a wide range of real-world problems across various fields, including physics, engineering, economics, and more. Here's an explanation of key concepts related to linear systems:**
