@@ -1,0 +1,14 @@
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\bin\Debug\net6.0\LinearSystemSolver.exe
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\bin\Debug\net6.0\LinearSystemSolver.deps.json
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\bin\Debug\net6.0\LinearSystemSolver.runtimeconfig.json
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\bin\Debug\net6.0\LinearSystemSolver.dll
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\bin\Debug\net6.0\LinearSystemSolver.pdb
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\obj\Debug\net6.0\LinearSystemSolver.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\obj\Debug\net6.0\LinearSystemSolver.AssemblyInfoInputs.cache
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\obj\Debug\net6.0\LinearSystemSolver.AssemblyInfo.cs
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\obj\Debug\net6.0\LinearSystemSolver.csproj.CoreCompileInputs.cache
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\obj\Debug\net6.0\LinearSystemSolver.dll
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\obj\Debug\net6.0\refint\LinearSystemSolver.dll
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\obj\Debug\net6.0\LinearSystemSolver.pdb
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\obj\Debug\net6.0\LinearSystemSolver.genruntimeconfig.cache
+C:\Users\AMR BEDIR\source\repos\LinearSystemSolver\LinearSystemSolver\obj\Debug\net6.0\ref\LinearSystemSolver.dll
