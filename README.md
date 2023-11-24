@@ -11,8 +11,18 @@
   * Solution with steps.
   * Final system solution.
 
+### How to Run Python GUI app?
+* **Install Python on your machine from this link: https://www.python.org/** 
+* **Using Visual Studio Code, Install Python from Extensions.** 
+* **Install numpy library by CMD using the following command:**
+```bash
+pip install numpy
+```
+* **Now, open the code folder in Visual Studio Code, and Run it using Ctrl+F5.**
 
-### Task code in C#
+
+
+### Task code in C# (Console App)
 
 ```c#
 using System;
@@ -103,7 +113,7 @@ class LinearSystemSolver
 ```
 [*C# Code File*](https://github.com/AmrBedir/LinearSystemSolver/blob/main/LinearSystemSolver/LinearSystemSolver/Program.cs)
 
-### Task code in C++
+### Task code in C++ (Console App)
 
 ```cpp
 #include <iostream>
@@ -184,7 +194,7 @@ int main() {
 [*C++ Code File*](https://github.com/AmrBedir/LinearSystemSolver/blob/main/LinearSystemSolver.cpp)
 
 
-### Task code in Python
+### Task code in Python (Console App)
 ```py
 def main():
     print("Linear System Solver - Task Assignment")
@@ -280,3 +290,6 @@ if __name__ == "__main__":
 
 ### Reference explains linear algebra
 * [Linear Algebra - Dr. Mervat Mikhail](https://www.youtube.com/playlist?list=PL7snZ0LSsq3gIc4bYM-OnvLZt2KpFvd2_)
+
+## Give a Star! ⭐️
+If you find this repository useful, please give it a star. Thanks!
