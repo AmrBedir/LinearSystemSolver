@@ -1,4 +1,4 @@
-# Algebra - Linear System Solver
+# Algebra - Linear System Solver (Console & GUI)
 
 
 ### What is required in the task?
@@ -20,6 +20,7 @@ pip install numpy
 ```
 * **Now, open the code folder in Visual Studio Code, and Run it using Ctrl+F5.**
 
+[*Python GUI App folder*](https://github.com/AmrBedir/LinearSystemSolver/tree/main/LinearSolver_Project_Python_GUI)
 
 
 ### Task code in C# (Console App)
