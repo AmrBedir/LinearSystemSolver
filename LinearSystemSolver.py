@@ -1,3 +1,33 @@
+def gaussian_elimination(matrix):
+    n = len(matrix)
+
+    # Forward elimination to convert the matrix into upper triangular form
+    for k in range(n):
+        for i in range(k + 1, n):
+            factor = matrix[i][k] / matrix[k][k]
+            for j in range(k, n + 1):
+                matrix[i][j] -= factor * matrix[k][j]
+
+    # Backward substitution to find the solution with row swapping
+    solution = [0] * n
+    for i in range(n - 1, -1, -1):
+        # Check if the coefficient is zero and swap rows if needed
+        if matrix[i][i] == 0:
+            for m in range(i - 1, -1, -1):
+                if matrix[m][i] != 0:
+                    # Swap rows i and m
+                    matrix[i], matrix[m] = matrix[m], matrix[i]
+                    break
+
+        # Continue with the backward substitution
+        solution[i] = matrix[i][n]
+        for j in range(i + 1, n):
+            solution[i] -= matrix[i][j] * solution[j]
+        solution[i] /= matrix[i][i]
+
+    return solution
+
+
 def main():
     print("Linear System Solver - Task Assignment")
     print("Second Level - First Semester: 2023-2024\n")
@@ -16,23 +46,10 @@ def main():
         print(f"Enter coefficients for equation {i + 1}:")
         for j in range(n):
             matrix[i][j] = float(input(f"a{i + 1}{j + 1}: "))
-
         matrix[i][n] = float(input(f"Enter the constant (b{i + 1}): "))
 
     # Perform Gaussian elimination to convert the matrix into upper triangular form
-    for k in range(n):
-        for i in range(k + 1, n):
-            factor = matrix[i][k] / matrix[k][k]
-            for j in range(k, n + 1):
-                matrix[i][j] -= factor * matrix[k][j]
-
-    # Backward substitution to find the solution
-    solution = [0] * n
-    for i in range(n - 1, -1, -1):
-        solution[i] = matrix[i][n]
-        for j in range(i + 1, n):
-            solution[i] -= matrix[i][j] * solution[j]
-        solution[i] /= matrix[i][i]
+    matrix = gaussian_elimination(matrix)
 
     # Display the solution with steps
     print("\n____________________\n")
@@ -48,7 +65,7 @@ def main():
     print("\n____________________\n")
     print("Final Solution:")
     for i in range(n):
-        print(f"x{i + 1} = {solution[i]:0.2f}")
+        print(f"x{i + 1} = {matrix[i][n]:0.2f}")
 
 
 if __name__ == "__main__":
