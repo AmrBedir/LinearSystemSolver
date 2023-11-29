@@ -72,10 +72,30 @@ class LinearSystemSolver
             }
         }
 
-        // Backward substitution to find the solution
+        // Backward substitution to find the solution with row swapping
         double[] solution = new double[n];
         for (int i = n - 1; i >= 0; i--)
         {
+            // Check if the coefficient is zero and swap rows if needed
+            if (matrix[i, i] == 0)
+            {
+                for (int m = i - 1; m >= 0; m--)
+                {
+                    if (matrix[m, i] != 0)
+                    {
+                        // Swap rows i and m
+                        for (int j = 0; j <= n; j++)
+                        {
+                            double temp = matrix[i, j];
+                            matrix[i, j] = matrix[m, j];
+                            matrix[m, j] = temp;
+                        }
+                        break;
+                    }
+                }
+            }
+
+            // Continue with the backward substitution
             solution[i] = matrix[i, n];
             for (int j = i + 1; j < n; j++)
             {
@@ -83,6 +103,7 @@ class LinearSystemSolver
             }
             solution[i] /= matrix[i, i];
         }
+
 
         // Display the solution with steps
         Console.WriteLine("\n____________________\n");
@@ -122,10 +143,50 @@ class LinearSystemSolver
 
 using namespace std;
 
+vector<double> gaussian_elimination(vector<vector<double>>& matrix) {
+    int n = matrix.size();
+
+    // Forward elimination to convert the matrix into upper triangular form
+    for (int k = 0; k < n; k++) {
+        for (int i = k + 1; i < n; i++) {
+            double factor = matrix[i][k] / matrix[k][k];
+            for (int j = k; j <= n; j++) {
+                matrix[i][j] -= factor * matrix[k][j];
+            }
+        }
+    }
+
+    // Backward substitution to find the solution with row swapping
+    vector<double> solution(n, 0.0);
+    for (int i = n - 1; i >= 0; i--) {
+        // Check if the coefficient is zero and swap rows if needed
+        if (matrix[i][i] == 0) {
+            for (int m = i - 1; m >= 0; m--) {
+                if (matrix[m][i] != 0) {
+                    // Swap rows i and m
+                    vector<double> temp = matrix[i];
+                    matrix[i] = matrix[m];
+                    matrix[m] = temp;
+                    break;
+                }
+            }
+        }
+
+        // Continue with the backward substitution
+        solution[i] = matrix[i][n];
+        for (int j = i + 1; j < n; j++) {
+            solution[i] -= matrix[i][j] * solution[j];
+        }
+        solution[i] /= matrix[i][i];
+    }
+
+    return solution;
+}
+
 int main() {
     cout << "Linear System Solver - Task Assignment" << endl;
-    cout << "Second Level - First Semester: 2023-2024" << endl;
-    cout << "\nName: Amr Bedir Taher" << endl;
+    cout << "Second Level - First Semester: 2023-2024\n" << endl;
+    cout << "Name: Amr Bedir Taher" << endl;
     cout << "ID: 1000264365" << endl;
     cout << "Group: 2, Section: 12" << endl;
     cout << "\n____________________\n" << endl;
@@ -135,11 +196,11 @@ int main() {
     cin >> n;
 
     // Create a matrix to store the coefficients and constants of the linear system
-    vector<vector<double>> matrix(n, vector<double>(n + 1));
+    vector<vector<double>> matrix(n, vector<double>(n + 1, 0.0));
 
     // Input coefficients and constants for each equation
     for (int i = 0; i < n; i++) {
-        cout << "Enter coefficients for equation " << i + 1 << ":" << endl;
+        cout << "Enter coefficients for equation " << i + 1 << ":\n";
         for (int j = 0; j < n; j++) {
             cout << "a" << i + 1 << j + 1 << ": ";
             cin >> matrix[i][j];
@@ -150,24 +211,7 @@ int main() {
     }
 
     // Perform Gaussian elimination to convert the matrix into upper triangular form
-    for (int k = 0; k < n; k++) {
-        for (int i = k + 1; i < n; i++) {
-            double factor = matrix[i][k] / matrix[k][k];
-            for (int j = k; j <= n; j++) {
-                matrix[i][j] -= factor * matrix[k][j];
-            }
-        }
-    }
-
-    // Backward substitution to find the solution
-    vector<double> solution(n);
-    for (int i = n - 1; i >= 0; i--) {
-        solution[i] = matrix[i][n];
-        for (int j = i + 1; j < n; j++) {
-            solution[i] -= matrix[i][j] * solution[j];
-        }
-        solution[i] /= matrix[i][i];
-    }
+    vector<double> solution = gaussian_elimination(matrix);
 
     // Display the solution with steps
     cout << "\n____________________\n" << endl;
@@ -197,6 +241,36 @@ int main() {
 
 ### Task code in Python (Console App)
 ```py
+def gaussian_elimination(matrix):
+    n = len(matrix)
+
+    # Forward elimination to convert the matrix into upper triangular form
+    for k in range(n):
+        for i in range(k + 1, n):
+            factor = matrix[i][k] / matrix[k][k]
+            for j in range(k, n + 1):
+                matrix[i][j] -= factor * matrix[k][j]
+
+    # Backward substitution to find the solution with row swapping
+    solution = [0] * n
+    for i in range(n - 1, -1, -1):
+        # Check if the coefficient is zero and swap rows if needed
+        if matrix[i][i] == 0:
+            for m in range(i - 1, -1, -1):
+                if matrix[m][i] != 0:
+                    # Swap rows i and m
+                    matrix[i], matrix[m] = matrix[m], matrix[i]
+                    break
+
+        # Continue with the backward substitution
+        solution[i] = matrix[i][n]
+        for j in range(i + 1, n):
+            solution[i] -= matrix[i][j] * solution[j]
+        solution[i] /= matrix[i][i]
+
+    return solution
+
+
 def main():
     print("Linear System Solver - Task Assignment")
     print("Second Level - First Semester: 2023-2024\n")
@@ -215,23 +289,10 @@ def main():
         print(f"Enter coefficients for equation {i + 1}:")
         for j in range(n):
             matrix[i][j] = float(input(f"a{i + 1}{j + 1}: "))
-
         matrix[i][n] = float(input(f"Enter the constant (b{i + 1}): "))
 
     # Perform Gaussian elimination to convert the matrix into upper triangular form
-    for k in range(n):
-        for i in range(k + 1, n):
-            factor = matrix[i][k] / matrix[k][k]
-            for j in range(k, n + 1):
-                matrix[i][j] -= factor * matrix[k][j]
-
-    # Backward substitution to find the solution
-    solution = [0] * n
-    for i in range(n - 1, -1, -1):
-        solution[i] = matrix[i][n]
-        for j in range(i + 1, n):
-            solution[i] -= matrix[i][j] * solution[j]
-        solution[i] /= matrix[i][i]
+    matrix = gaussian_elimination(matrix)
 
     # Display the solution with steps
     print("\n____________________\n")
@@ -247,12 +308,11 @@ def main():
     print("\n____________________\n")
     print("Final Solution:")
     for i in range(n):
-        print(f"x{i + 1} = {solution[i]:0.2f}")
+        print(f"x{i + 1} = {matrix[i][n]:0.2f}")
 
 
 if __name__ == "__main__":
     main()
-
 ```
 [*Python Code File*](https://github.com/AmrBedir/LinearSystemSolver/blob/main/LinearSystemSolver.py)
 
