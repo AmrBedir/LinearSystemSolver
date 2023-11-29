@@ -133,7 +133,7 @@ class LinearSystemSolver
     }
 }
 ```
-[*C# Code File*](https://github.com/AmrBedir/LinearSystemSolver/blob/main/LinearSystemSolver/LinearSystemSolver/Program.cs)
+[*C# Code File*](https://github.com/AmrBedir/LinearSystemSolver/blob/main/LinearSystemSolver.cs)
 
 ### Task code in C++ (Console App)
 
